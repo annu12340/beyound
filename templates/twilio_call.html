@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<div class="hero-wrap hero-bread" style="background-image: url('https://images.unsplash.com/photo-1584811644165-33db3b146db5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80')">
+<div class="hero-wrap hero-bread" style="background-image: url('https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')">
    <div class="container">
       <div class="row no-gutters slider-text align-items-center justify-content-center">
          <div class="col-md-9 text-center">
-            <h1 class="mb-0 bread">Checkout</h1>
+            <h1 class="mb-0 bread">Immediate contact</h1>
          </div>
       </div>
    </div>
@@ -18,48 +18,49 @@
                   <div class="cart-detail cart-total p-6 p-md-4">
                      <h2 class="billing-heading mb-4">Whom to contact</h2>
                      <p >
-                        <h3>Neighbors</h3>
+                        <h3>Authorities</h3>
+                        <hr/> 
                    <div style="margin-left:5%">
-                     <label class="container-checkbox">Luna Romero
+                     {% for authority_personal in authorities %} 
+                     <label class="container-checkbox">{{authority_personal.name}}
                         <input type="checkbox" >
                         <span class="checkmark"></span>
                       </label>
-                      <label class="container-checkbox">Olive Rios
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="container-checkbox">Kolby Norton
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="container-checkbox">Trey Farrell
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
+                     {% endfor %}
+                   
+                 
                    </div>
-                       <hr/> 
+                     <br/>
+                     </p>
+                     <p >
+                        <h3>Neighbors</h3>
+                        <hr/> 
+                   <div style="margin-left:5%">
+                     {% for neighbor in neighbors %} 
+                     <label class="container-checkbox">{{neighbor.name}}
+                        <input type="checkbox" >
+                        <span class="checkmark"></span>
+                      </label>
+                     {% endfor %}
+                   
+                 
+                   </div>
+                       <br/>  <br/> 
                      </p>
                      <p >
                         <h3>Friends</h3>
-                   <div style="margin-left:5%">
-                     <label class="container-checkbox">Saige Osborn
-                        <input type="checkbox" >
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="container-checkbox">Derek Davidson
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="container-checkbox">Ariella Frost
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="container-checkbox">Trey Farrell
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                   </div>
-                       <hr/> 
+                        <hr/> 
+                        <div style="margin-left:5%">
+                           {% for friend in friends %} 
+                           <label class="container-checkbox">{{friend.name}}
+                              <input type="checkbox" >
+                              <span class="checkmark"></span>
+                            </label>
+                           {% endfor %}
+                         
+                       
+                         </div>
+                            
                      </p>
                   
                   </div>
