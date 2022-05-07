@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Authorities, Product
 
-# Register your models here.
+
+admin.site.register(Product, Neighbours)
+admin.site.register(Friends)
