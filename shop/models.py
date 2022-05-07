@@ -14,6 +14,8 @@ class Product(models.Model):
     photo = models.ImageField(upload_to='products')
     price = models.IntegerField()
     details = models.TextField()
+    rating = models.CharField(max_length=10)
+    count = models.IntegerField(default=452)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
 
