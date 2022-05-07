@@ -15,7 +15,7 @@ img {
 
 :root {
    --body-font: "Inter", sans-serif;
-   --theme-bg: #201d2b;
+   --theme-bg: #1d1b24;
    --body-color: #808191;
    --button-bg: #353340;
    --border-color: rgb(128 129 145 / 24%);
@@ -78,11 +78,11 @@ body {
 }
 .sidebar-link:hover:nth-child(2n + 1) svg,
 .sidebar-link.is-active:nth-child(2n + 1) svg {
-   background: #ff7551;
+   background: #32a7e2;
 }
 .sidebar-link:hover:nth-child(2n) svg,
 .sidebar-link.is-active:nth-child(2n) svg {
-   background: #32a7e2;
+   background: #ff7551;
 }
 .sidebar-link:hover:nth-child(2n + 3) svg,
 .sidebar-link.is-active:nth-child(2n + 3) svg {
@@ -361,4 +361,49 @@ body {
 ::-webkit-scrollbar-thumb {
    background-color: rgba(21, 20, 26, 0.63);
    border-radius: 10px;
+}
+.title {
+   font-size: 43px;
+   font-weight: 500;
+   color: #fff;
+   margin: 5px 0 20px;
+}
+
+.subtitle {
+   font-size: 18px;
+   display: block;
+   margin-bottom: 10px;
+   font-family: "Lora", Georgia, serif;
+   font-style: italic;
+   color: #82ae46;
+}
+
+.ftco-section {
+   padding: 3em 5em;
+   position: relative;
+}
+.detailed-img {
+   border-radius: 2%;
+   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.qrcode {
+   margin-bottom: 5%;
+}
+.qrcode input {
+   width: 100%;
+   height: 100%;
+   border: none;
+   background-color: var(--button-bg);
+   border-radius: 8px;
+   font-family: var(--body-font);
+   font-size: 15px;
+   font-weight: 500;
+   padding: 0 40px 0 16px;
+   box-shadow: 0 0 0 2px rgba(134, 140, 160, 0.02);
+
+   background-position: 96%;
+   color: #fff;
+   height: 46px;
+   display: flex;
+   width: 100%;
 }

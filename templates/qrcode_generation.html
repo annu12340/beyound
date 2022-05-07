@@ -1,0 +1,77 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<section class="ftco-section">
+   <h1 class="title text-center">QR code generation</h1>
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-xl-10">
+            <form action="#" class="billing-form" method="post">
+               {% csrf_token %}
+
+               <div class="row align-items-end">
+                  <div class="col-md-12">
+                     <div class="form-group qrcode">
+                        <label for="name">Full Name</label>
+                        <input name="name" type="text" class="form-control" placeholder="" />
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group qrcode">
+                        <label for="relationship">Relationship</label>
+                        <input name="relationship" type="text" class="form-control" placeholder="" />
+                     </div>
+                  </div>
+
+                  <div class="col-md-6">
+                     <div class="form-group qrcode">
+                        <label for="phone">Phone</label>
+                        <input name="phone" type="text" class="form-control" placeholder="" />
+                     </div>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-md-6">
+                     <div class="form-group qrcode">
+                        <label for="streetaddress">Street Address</label>
+                        <input name="streetaddress" type="text" class="form-control" placeholder="House number and street name" />
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group qrcode">
+                        <input name="" type="text" class="form-control" placeholder="Appartment, suite, unit etc: (optional)" />
+                     </div>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-md-6">
+                     <div class="form-group qrcode">
+                        <label for="towncity"> City and State</label>
+                        <input name="towncity" type="text" class="form-control" placeholder="" />
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group qrcode">
+                        <label for="postcode">Postcode *</label>
+                        <input name="postcode" type="text" class="form-control" placeholder="" />
+                     </div>
+                  </div>
+
+                  <div class="w-100"></div>
+                  <div class="col-md-12">
+                     <div class="form-group mt-4">
+                        <div class="radio">
+                           <label class="mr-3"><input name="" type="radio" name="optradio" /> Create an Account? </label>
+                           <label><input name="" type="radio" name="optradio" /> Ship to different address</label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <br />
+               <div class="text-center"><button class="btn btn-success py-3 px-4 text-center" type="submit">Generate QR Code</button></div>
+            </form>
+            <!-- END -->
+         </div>
+      </div>
+   </div>
+</section>
+<!-- .section -->
+
+{% endblock %}

@@ -23,7 +23,9 @@ INSTALLED_APPS = [
 
     'shop',
     'user',
+    'qrcode_details',
     'calls',
+
 ]
 
 MIDDLEWARE = [

@@ -3,22 +3,24 @@
    <div class="small-header anim" style="--delay: 0.3s">Most Popular</div>
    <div class="products">
       {% for product in products %}
-      <div class="product anim" style="--delay: 0.4s">
-         <div class="product-wrapper">
-            <img class="product-img" src="{{ product.photo.url }}" alt="{{ product.name }}" />
-            <div class="heart-img__wrapper product-like">
-               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
-                  <path d="M20 6L9 17l-5-5" />
-               </svg>
-               <img class="heart-img" src="http://www.downloadclipart.net/medium/dark-red-heart-transparent-background.png" />
+      <a href="{% url 'product-details' product.id %}" style="text-decoration: none; color: inherit">
+         <div class="product anim" style="--delay: 0.4s">
+            <div class="product-wrapper">
+               <img class="product-img" src="{{ product.photo.url }}" alt="{{ product.name }}" />
+               <div class="heart-img__wrapper product-like">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+                     <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <img class="heart-img" src="http://www.downloadclipart.net/medium/dark-red-heart-transparent-background.png" />
+               </div>
+            </div>
+            <div class="product-name">{{ product.name }}</div>
+            <div class="product-price">₹ {{ product.price }}</div>
+            <div class="product-rating">
+               <div class="product-rating">{{ product.rating }} <i class="ion-ios-star"></i>&nbsp;&nbsp; | &nbsp; ({{ product.count }} )</div>
             </div>
          </div>
-         <div class="product-name">{{ product.name }}</div>
-         <div class="product-price">₹ {{ product.price }}</div>
-         <div class="product-rating">
-            <div class="product-rating">{{ product.rating }} <i class="ion-ios-star"></i>&nbsp;&nbsp; | &nbsp; ({{ product.count }} )</div>
-         </div>
-      </div>
+      </a>
       {% endfor %}
    </div>
    <!-- ------------------ -->

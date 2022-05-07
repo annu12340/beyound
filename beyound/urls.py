@@ -9,6 +9,7 @@ urlpatterns = [
     path('', include('shop.urls')),
 
     path('user/', include('user.urls')),
+    path('qrcode/', include('qrcode_details.urls')),
     path('calls/', include('calls.urls')),
 ]
 

@@ -2,6 +2,7 @@
 # Environments
 .env
 .venv
+openscreen/
 env/
 venv/
 ENV/
