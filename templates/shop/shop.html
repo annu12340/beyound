@@ -1,0 +1,80 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="hero-wrap hero-bread" style="background-image: url(https://images.unsplash.com/photo-1633934542430-0905ccb5f050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80)">
+   <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+         <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-0 bread">
+               Let no one be <br />
+               lost again
+            </h1>
+         </div>
+      </div>
+   </div>
+</div>
+
+<section class="ftco-section">
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="row mb-1 text-center">
+            <div class="category row">
+               <p class="inner-cat col-md-2"><a href="#" class="active">All</a></p>
+               {% for ctg in category %}
+               <p class="inner-cat col-md-3"><a href="#">{{ ctg.name }}</a></p>
+               {% endfor %}
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         {% if products %} {% for product in products %}
+         <div class="col-md-6 col-lg-3">
+            <div class="product">
+               <a href="{% url 'product-details' product.id %}" class="img-prod"
+                  ><img class="product-img" src="{{ product.photo.url }}" alt="Colorlib Template" />
+                  <div class="overlay"></div>
+               </a>
+               <div class="text py-3 pb-4 px-3 text-center">
+                  <h3><a href="{% url 'product-details' product.id %}">{{ product.name }}</a></h3>
+                  <div class="d-flex">
+                     <div class="pricing">
+                        <p class="price"><span>₹{{ product.price }}.00</span></p>
+                     </div>
+                  </div>
+                  <div class="bottom-area d-flex px-3">
+                     <div class="m-auto d-flex">
+                        <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                           <span><i class="ion-ios-menu"></i></span>
+                        </a>
+                        <a href="{% url 'checkout' %}" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                           <span><i class="ion-ios-cart"></i></span>
+                        </a>
+                        <a href="#" class="heart d-flex justify-content-center align-items-center">
+                           <span><i class="ion-ios-heart"></i></span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         {% endfor %} {% else %}
+         <p>There is No Product Here!</p>
+         {% endif %}
+      </div>
+      <div class="row mt-5">
+         <div class="col text-center">
+            <div class="block-27">
+               <ul>
+                  <li><a href="#">&lt;</a></li>
+                  <li class="active"><span>1</span></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li><a href="#">&gt;</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+{% endblock %}
