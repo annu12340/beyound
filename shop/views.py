@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.urls import reverse
 from .models import Category, Product
+import stripe
 
 
 def shop_page(request):
@@ -25,5 +27,8 @@ def product_details(request, product_id):
 
 
 def checkout(request):
-
     return render(request, 'checkout.html')
+
+
+def raffle(request):
+    return render(request, 'raffle.html')

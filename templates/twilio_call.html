@@ -1,22 +1,14 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<div class="hero-wrap hero-bread" style="background-image: url('https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')">
-   <div class="container">
-      <div class="row no-gutters slider-text align-items-center justify-content-center">
-         <div class="col-md-9 text-center">
-            <h1 class="mb-0 bread">Immediate contact</h1>
-         </div>
-      </div>
-   </div>
-</div>
 
 <section class="ftco-section">
-   <div class="container">
+   <h1 class="title text-center">Quick contacts</h1> 
+   <div class="container-fluid">
       <div class="row justify-content-center">
          <div class="col-xl-4">
             <div class="row">
                <div class="col-md-12 d-flex mb-5">
                   <div class="cart-detail cart-total p-6 p-md-4">
-                     <h2 class="billing-heading mb-4">Whom to contact</h2>
+                    
                      <p >
                         <h3>Authorities</h3>
                         <hr/> 
@@ -68,50 +60,52 @@
             </div>
          </div>
          <div class="col-xl-8">
+            <br/>
             <form action="#" class="billing-form" method="post">
                {% csrf_token %}
 
                <div class="row align-items-end">
                   <div class="w-100"></div>
-                  <div class="col-md-6">
-                     <div class="form-group">
+                  <div class="col-md-10">
+                     <div class="form-group calls">
                         <label for="name"> Name of the child</label>
                         <input name="name" type="text" class="form-control" placeholder="" />
                      </div>
                   </div>
 
-                  <div class="col-md-6">
-                     <div class="form-group">
+                  <div class="col-md-10">
+                     <div class="form-group calls">
                         <label for="age">Age of child</label>
                         <input name="age" type="text" class="form-control" placeholder="" />
                      </div>
                   </div>
-                  <div class="col-md-6">
-                     <div class="form-group">
+                  <div class="col-md-10">
+                     <div class="form-group calls">
                         <label for="time">Time of missing</label>
                         <input name="time" type="time" class="form-control" placeholder="" />
                      </div>
                   </div>
-                  <div class="col-md-6">
-                     <div class="form-group">
+                  <div class="col-md-10">
+                     <div class="form-group calls">
                         <label for="location">Where was your child last found</label>
                         <input name="location" type="text" class="form-control" placeholder="" />
                      </div>
                   </div>
                   <div class="w-100"></div>
-                  <div class="col-md-6">
-                     <div class="form-group">
+                  <div class="col-md-10">
+                     <div class="form-group calls">
                         <label for="wearing">What was your child wearing?</label>
                         <input name="wearing" type="text" class="form-control" placeholder="" />
                      </div>
                   </div>
-                  <div class="col-md-6">
-                     <div class="form-group">
+                  <div class="col-md-10">
+                     <div class="form-group calls">
                         <label for="extra_info">Other info</label>
                         <input name="extra_info" type="text" class="form-control" placeholder="" />
                      </div>
                   </div>
                </div>
+               <br><br>
                <button class="btn btn-success py-3 px-4" type="submit">Make call and send text</button>
             </form>
          </div>
