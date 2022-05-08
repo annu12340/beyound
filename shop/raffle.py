@@ -17,6 +17,8 @@ def scaninfo_main(scanid, random_number):
 
     print(result)
     isWinner = False
-    if result['asset']['scanCount'] == random_number:
+    scancount = json_object['qrCode']['scanCount']
+    # print('$$$$$$$$$$$$$$$$$$$$$$$4scancount', scancount)
+    if scancount == random_number:
         isWinner = True
-    return isWinner
+    return scancount, isWinner

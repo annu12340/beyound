@@ -30,12 +30,16 @@ def checkout(request):
     return render(request, 'checkout.html')
 
 
+def successful(request):
+    return render(request, 'succesfull.html')
+
+
 def raffle(request):
     scanid = request.GET.get('scanId', '')
     print(scanid)
     random_number = random.randint(1, 100)
     result = ''
-    result = scaninfo_main(scanid, random_number)
+    scancount, result = scaninfo_main(scanid, random_number)
     if result == True:
         print("Congrats you are the lucky winner")
-    return render(request, 'raffle.html')
+    return render(request, 'raffle.html', {'scancount': scancount})
