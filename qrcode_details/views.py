@@ -6,7 +6,7 @@ from .models import Qrcode_info
 def qrcode(request):
     if request.POST:
         print("********************************")
-
+        parent = request.POST['parent']
         childname = request.POST['childname']
 
         relationship = request.POST['relationship']
@@ -14,7 +14,7 @@ def qrcode(request):
         phone = request.POST['phone']
         towncity = request.POST['towncity']
         postcode = request.POST['postcode']
-        form = Qrcode_info(childname=childname,  relationship=relationship, streetaddress=streetaddress,
+        form = Qrcode_info(parent=parent, childname=childname,  relationship=relationship, streetaddress=streetaddress,
                            towncity=towncity, postcode=postcode, phone=phone)
         form.save()
 

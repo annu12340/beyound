@@ -231,7 +231,6 @@ body {
 }
 
 .anim {
-   -webkit-animation: bottom 0.8s var(--delay) both;
    animation: bottom 0.8s var(--delay) both;
 }
 
@@ -406,4 +405,8 @@ body {
    height: 46px;
    display: flex;
    width: 100%;
+}
+
+.details {
+   font-size: 18px;
 }
