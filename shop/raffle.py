@@ -1,14 +1,8 @@
 import requests
 import json
-from twilio.rest import Client
-from twilio.twiml.voice_response import VoiceResponse, Say
-from dotenv import load_dotenv
-import os
-from datetime import datetime
-load_dotenv()
 
 
-def scaninfo_main(scanid):
+def scaninfo_main(scanid, random_number):
     url = "https://kbdgsb6g57.execute-api.us-east-1.amazonaws.com/prod/scans/"+scanid
 
     headers = {
@@ -22,34 +16,7 @@ def scaninfo_main(scanid):
     result = json.dumps(json_object, indent=3)
 
     print(result)
-
-    time = json_object["scan"]["scanTime"]
-    city = json_object["scan"]["locationCityName"]
-    region = json_object["scan"]["locationRegionName"]
-    country = json_object["scan"]["locationCountryName"]
-    latitude = json_object["scan"]["locationLatitude"]
-    longitude = json_object["scan"]["locationLongitude"]
-    gmap = "https://maps.google.com/?q="+latitude+","+longitude+" "
-    msg = "A scan of your child's jewellry from has been made from {},{},{} at {}. The exact latitude and longitude is {},{}".format(
-        city, region, country, time, latitude, longitude)
-    twilio_contact(msg, gmap)
-
-
-def twilio_contact(msg, gmap):
-    print('calling twilio')
-    account_sid = os.getenv('account_sid')
-    auth_token = os.getenv('auth_token')
-    client = Client(account_sid, auth_token)
-    response = VoiceResponse()
-    response.say(msg, voice='alice')
-    call = client.calls.create(
-        twiml=response,
-        from_='+19362263441',
-        to='+919188058865'
-    )
-
-    message = client.messages.create(
-        body=msg+"\n\n"+gmap,
-        from_='whatsapp:+14155238886',
-        to='whatsapp:+919188058865'
-    )
+    isWinner = False
+    if result['asset']['scanCount'] == random_number:
+        isWinner = True
+    return isWinner
