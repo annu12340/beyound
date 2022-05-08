@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<section class="ftco-section">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-10 qrcode_details-details pl-md-5">
+            <h1 class="title">{{ qrcode_details.childname }}</h1>
+            <div class="">
+               <p class="mr-2">&nbsp;&nbsp;&nbsp;&nbsp;{{ qrcode_details.relation }} of {{qrcode_details.guardianname}}</p>
+               <p>The child has been missing since {{ qrcode_details.date }}</p>
+               . If found, please contact {{ qrcode_details.phone }}
+            </div>
+            <div class="">
+               <b>Address</b>
+               <p class="mr-2">&nbsp;&nbsp;&nbsp;&nbsp;{{ qrcode_details.streetaddress }}</p>
+               <p>{{qrcode_details.towncity}}</p>
+               <p>{{qrcode_details.postcode}}</p>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+{% endblock %}

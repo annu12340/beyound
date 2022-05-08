@@ -6,18 +6,23 @@ from .models import Qrcode_info
 def qrcode(request):
     if request.POST:
         print("********************************")
-        name = request.POST['name']
+
+        childname = request.POST['childname']
+
         relationship = request.POST['relationship']
         streetaddress = request.POST['streetaddress']
         phone = request.POST['phone']
         towncity = request.POST['towncity']
         postcode = request.POST['postcode']
-        form = Qrcode_info(name=name, relationship=relationship, streetaddress=streetaddress,
+        form = Qrcode_info(childname=childname,  relationship=relationship, streetaddress=streetaddress,
                            towncity=towncity, postcode=postcode, phone=phone)
         form.save()
-        print(name, phone, streetaddress)
-        data = 'This is the '+relationship+" of "+name+'\n Phone: '+phone + \
-            '\n\n Address: '+streetaddress + "\n"+towncity + "\n"+postcode
-        print(data)
+
         return render(request, 'checkout.html')
-    return render(request, 'qrcode_generation.html')
+    return render(request, 'qrcode/qrcode_generation.html')
+
+
+def qrcode_detail(request, qrcode_id):
+    qrcode_details = Qrcode_info.objects.get(id=qrcode_id)
+    context = {'qrcode_details': qrcode_details, }
+    return render(request, 'qrcode/qrcode_details.html', context)

@@ -2,7 +2,7 @@
 # Environments
 .env
 .venv
-openscreen/
+# openscreen/
 env/
 venv/
 ENV/
